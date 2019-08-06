@@ -13,5 +13,5 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "SHA256:0kCaEVXPBF+Ur4z9Kr5vPWfiFG76OV5M7/SiPM3hb3c"
-      - run: scp sketch.js root@174.138.27.55:/root/deploy
+      - run: scp -o StrictHostKeyChecking=no sketch.js root@174.138.27.55:/root/deploy
 
