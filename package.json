@@ -1,0 +1,13 @@
+{
+  "name": "UniTests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Wisit Phusi",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^24.8.0"
+  }
+}
