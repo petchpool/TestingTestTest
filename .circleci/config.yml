@@ -2,15 +2,18 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:10.16
 
     working_directory: ~/repo
 
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "49:5d:ce:d7:fd:22:1b:8d:dd:35:59:24:e1:cb:6a:57"
       - checkout
-      - run: npm install
-      - run: npm test
-      - run: scp sketch.js root@174.138.27.55:/root/deploy
+      - run: yarn install
+      - run: yarn test
+
+#  deploy:
+#    - add_ssh_keys:
+#        fingerprints:
+#          - "49:5d:ce:d7:fd:22:1b:8d:dd:35:59:24:e1:cb:6a:57"
+#    - run: scp sketch.js root@174.138.27.55:/root/deploy
+
