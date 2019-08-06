@@ -1,10 +1,16 @@
 version: 2
 jobs:
   build:
+    branches:
+      only:
+        - master
     docker:
       - image: circleci/node:7.10
+
+    working_directory: ~/repo
 
     steps:
       - checkout
       - run: npm install
       - run: npm test
+      - run: scp sketch.js root@174.138.27.55:/root/deploy
