@@ -2,9 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:10.16
+
+    working_directory: ~/repo
 
     steps:
       - checkout
-      - run: npm install
-      - run: npm test
+      - run: yarn install
+      - run: yarn test
+      - run: scp -o StrictHostKeyChecking=no sketch.js root@174.138.27.55:/root/deploy
+
