@@ -12,6 +12,6 @@ jobs:
       - run: yarn test
       - add_ssh_keys:
           fingerprints:
-            - "49:5d:ce:d7:fd:22:1b:8d:dd:35:59:24:e1:cb:6a:57"
+            - "SHA256:0kCaEVXPBF+Ur4z9Kr5vPWfiFG76OV5M7/SiPM3hb3c"
       - run: scp sketch.js root@174.138.27.55:/root/deploy
 
