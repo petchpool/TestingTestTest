@@ -10,10 +10,8 @@ jobs:
       - checkout
       - run: yarn install
       - run: yarn test
-
-#  deploy:
-#    - add_ssh_keys:
-#        fingerprints:
-#          - "49:5d:ce:d7:fd:22:1b:8d:dd:35:59:24:e1:cb:6a:57"
-#    - run: scp sketch.js root@174.138.27.55:/root/deploy
+      - add_ssh_keys:
+        fingerprints:
+          - "49:5d:ce:d7:fd:22:1b:8d:dd:35:59:24:e1:cb:6a:57"
+      - run: scp sketch.js root@174.138.27.55:/root/deploy
 
